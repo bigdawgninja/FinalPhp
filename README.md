@@ -1,5 +1,3 @@
 # FinalPhp
 
-Hello world
-
-Hello onm local
+A word game developed in PHP and AJAX

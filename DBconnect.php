@@ -117,6 +117,65 @@ if ($conn->query($sql) === TRUE ) {
 } 
 }
 
+function selectDataPlayer($conn, $valueSelected){
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
+  $sql = "SELECT $valueSelected FROM Player";
+
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+        echo "ID: " . $row["id"]. " - First Name: " . $row["fName"]. " - Last Name: " . $row["lName"]. " - Username: " . $row["userName"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+}
+
+
+function selectDataAuth($conn,$valueSelected){
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+  $sql = "SELECT $valueSelected FROM authenticator";
+
+  $result = $conn->query($sql);
+
+  if($result->num_rows > 0){
+    while($row = $result->fetch_assoc()){
+      echo "passCode: ". $row["passCode"]."registrationOrder: " .$row["registrationOrder"];
+    }
+  }else{
+    echo "0 results";
+  }
+
+}
+
+function selectDataScore($conn, $valueSelected){
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+  $sql = "SELECT $valueSelected FROM score";
+
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+    echo "scoreTime: " . $row["scoreTime"]. " result: " . $row["result"]. " livesUsed: " . $row["livesUsed"]. " - registrationOrder: " . $row["registrationOrder"]. "<br>";
+}
+} else {
+echo "0 results";
+}
+
+}
+
+$conn = connectDB();
+
+
+
+$conn->close();
 
 ?>

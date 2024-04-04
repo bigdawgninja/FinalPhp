@@ -172,10 +172,36 @@ echo "0 results";
 
 }
 
+
+function selectView($conn, $valueSelected){
+  if ($conn->connect_error) {
+    die("Connection Failed". $conn->connect_error);
+  }
+  $sql = "SELECT * FROM history WHERE id = $valueSelected";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Outcome</th><th>Number of Lives Used</th><th>Date and Time</th></tr>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["id"] . "</td>";
+        echo "<td>" . $row["fName"] . "</td>";
+        echo "<td>" . $row["lName"] . "</td>";
+        echo "<td>" . $row["result"] . "</td>";
+        echo "<td>" . $row["livesUsed"] . "</td>";
+        echo "<td>" . $row["scoreTime"] . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+} else {
+    echo "No results found";
+}
+}
+
 $conn = connectDB();
 
+selectView($conn, 1);
 
-
-$conn->close();
 
 ?>

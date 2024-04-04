@@ -1,0 +1,39 @@
+*{
+    background-color: #111E6C;
+    text-align: center;
+    color: white;
+}
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid red;
+}
+.dot {
+    height: 50px;
+    width: 50px;
+    background-color: orange;
+    border-radius: 50%;
+    display: inline-block;
+  }
+button:hover{
+    cursor: pointer;
+}
+
+.startGame{
+    font-size: 60px;
+    padding: 5%;
+    border-color: white;
+    border-radius: 30px;
+    margin: 5%;
+}
+
+h1{
+    text-align: center;
+}
+
+footer{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}

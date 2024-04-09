@@ -10,7 +10,6 @@ if(isset($_SESSION['userid'])) {
 }$userConnected;
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
     if (password_verify($password, $row['passCode'])) {
         $_SESSION['userid'] = $row['userName'];
         echo " Login successful!".$username;
-        header("Location: main.php");
+        header("Location: /FinalPhp/FinalPhp/main.php");
         exit();
 
     } else {

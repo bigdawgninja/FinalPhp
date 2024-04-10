@@ -22,7 +22,8 @@ include 'db.php';
             $updateStmt->bind_param("si", $newPasswordHash, $excisting_user_reg_order);
             
             if ($updateStmt->execute()) {
-                echo "Password updated successfully!";
+                echo "<br/>Password updated successfully!";
+                header("refresh:5; url=FinalPhp\main.php");
             } else {
                 echo "Error updating password.";
             }

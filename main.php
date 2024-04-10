@@ -1,13 +1,6 @@
 <?php
-session_start();
-
-if(isset($_SESSION['userid'])) {
-    $username = $_SESSION['userid'];
-    echo "Welcome, $username!";
-} else {
-    header("Location: login.php");
-    exit();
-}$userConnected;
+require_once 'DBconnect.php';
+authenticateUser(false);
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +19,18 @@ if(isset($_SESSION['userid'])) {
     <header>
         <h1>The Game</h1>
         <nav>
+        <?php
+        if(isset($_SESSION['userid'])) {
+            echo'';
+            echo '<a href="Dev5\ShowHistory.php">History</a>';
+            //echo '<a href="cancel.php">Cancel</a>';
+            //echo '<a href="logout.php">Sign Out</a>';
+        } else {
+            echo '<a href="Dev3\login.html">Sign In</a><br/>';
             
+            echo '<a href="Dev3\signup.html">Sign Up</a>';
+        }
+        ?>
         </nav>
     </header>
     <script src="Dev5\script.js"></script>

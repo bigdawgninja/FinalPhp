@@ -1,9 +1,12 @@
 <?php
     include("comm_element.html");
-    include("..\DBconnect.php");
-
-    $sql = "SELECT * FROM history"; // Assuming 'history' is your view containing game history data
-    $result = $conn->query($sql);
+    require_once '..\DBconnect.php';
+    userConnected(false);
+    $conn = connectDB();
+    if(isset($_POST['mainMenu'])) {
+        header("Location: ..\main.php");
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +30,13 @@
     </thead>
     <tbody>
     <?php
+    if(isset($_SESSION['userid'])){
+        echo 'Connected user: ' . $_SESSION['userid']."<br/>";
+        $useConnected = $_SESSION['userid'];
+        $useConnected = $conn->real_escape_string($useConnected);
+        $sql = "SELECT * FROM HISTORY AS v JOIN player as p on v.id = p.id where p.userName = '$useConnected' " ;
+        $result = $conn->query($sql);
+    }
     if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
@@ -41,11 +51,16 @@
             } else {
                 echo "<tr><td colspan='6'>No data available</td></tr>";
             }
-            ?>
+        
+    ?>
     </tbody>
     </table>
 
 <br/>
+<form method="post">
+        <button type="submit" name="mainMenu">Game</button>
+    </form>
+
 <?php
 include("comm_footer.html");
 ?>

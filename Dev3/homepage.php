@@ -1,3 +1,20 @@
+<?php
+session_start();
+if (!isset($_SESSION['userid'])) {
+    header('Location: login.html');
+    exit;
+}
+if(isset($_POST['mainMenu'])) {
+    header("Location: ..\main.php");
+    exit;
+}
+
+if(isset($_POST["logout_btn"])) {
+    if(isset($_POST["logout_btn"])) {
+        header("Location: logout.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,26 +60,15 @@
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h2>Login</h2>
-    <form action="login.php" method="POST">
-        <div class="form-group">
-            <label for="UserName">UserName:</label>
-            <input type="text" id="UserName" name="UserName" required>
-            
-        </div>
-        
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="submit-btn">Login</button>
+    <div class="container">
+    <h2>Login successful</h2>
+    <form method="post">
+        <button type="submit" name="logout_btn">Sign Out</button>
+        <button type="submit" name="mainMenu">Game</button>
     </form>
-        <a href="forgetpassword.html">Forgot Password?</a>
-</div>
-
-
+    </div>
 </body>
 </html>

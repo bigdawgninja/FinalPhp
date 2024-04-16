@@ -3,12 +3,17 @@
     text-align: center;
     color: white;
 }
+.triangle-down,
+.dot {
+    pointer-events: none; 
+}
 .triangle-down {
 	width: 0;
 	height: 0;
 	border-left: 50px solid transparent;
 	border-right: 50px solid transparent;
 	border-top: 100px solid red;
+    position: absolute;
 }
 .dot {
     height: 50px;
@@ -16,6 +21,7 @@
     background-color: orange;
     border-radius: 50%;
     display: inline-block;
+    position: absolute;
   }
 button:hover{
     cursor: pointer;

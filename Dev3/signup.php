@@ -40,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->bind_param("si", $hashedPassword,$registrationOrder);
                 if($stmt->execute()){
                     echo "<p>You have successfully signed up!</p>";
+                    echo"Redirecting to the game";
+                    header("refresh:5;url=../main.php");
                 }
                 
             }

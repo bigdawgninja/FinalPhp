@@ -35,20 +35,33 @@ function userConnected($redirect = true){
     }
 }
 
-
 function connectDB() {
   $host = "localhost";
-$username = 'root'; 
-$password = '';
-$dbname = 'kidsGames'; 
+  $username = 'root';
+  $password = '';
+  $dbname = 'kidsGames';
+  
+  // Connect to MySQL
   $conn = new mysqli($host, $username, $password);
+
+  // Check connection
   if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+  $result = $conn->query("SHOW DATABASES LIKE '$dbname'");
+  // this if is when we want to create the DB if it is not created by doing a request to msqli to see 
+  // if the resuts comes with 1 it will use it
+  if ($result->num_rows == 0) {
+      $conn->query("CREATE DATABASE $dbname");
+      $conn->select_db($dbname);
+  } else {
+      $conn->select_db($dbname);
+  }
+
+  return $conn;
 }
-$conn->select_db($dbname);
-//echo "Connected successfully";
-return $conn;
-}
+
 
 function createDB($conn){
   $sql = "CREATE DATABASE IF NOT EXISTS kidsGames;";

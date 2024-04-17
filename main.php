@@ -26,7 +26,6 @@ createTable($conn);
         if(isset($_SESSION['userid'])) {
             echo 'Connected user: ' . $_SESSION['userid']."<br/>";
             echo '<a href="Dev5\ShowHistory.php">History</a><br/>';
-            //echo '<a href="cancel.php">Cancel</a>';
             echo '<a name="logout_btn" href="Dev3\logout.php">Sign Out</a>';
         } else {
             echo '<a href="Dev3\login.html">Sign In</a><br/>';

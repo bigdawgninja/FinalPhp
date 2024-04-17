@@ -19,7 +19,6 @@ function DisplayLevel(string $level, string $type): void
     ?>
 
         <h3>Here are the values: <?=$lettersInSentence?></h3>
-
         <form action="<?=$levelUrl?>" method="post" id="form1">
 
             <label for="inputAnswer">Please insert you answer in the following format. A1, B1, C1</label><br>
@@ -30,7 +29,8 @@ function DisplayLevel(string $level, string $type): void
             <?php } ?>
 
             <br>
-            <input type="submit" class="sendButton" id="sendButton" name="send">
+            <input type="submit" class="sendButton" id="sendButton" name="send" style="padding: 1%;">
+            <button type="submit" class="abandon" id="abandon" name="abandon" style="padding: 1%; margin-left: 2%">Abandon</button>
         </form>
     </div>
 <?php } ?>

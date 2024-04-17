@@ -1,5 +1,7 @@
 # FinalPhp
 
+Release date: 16/04/2023
+
 A word game developed in PHP and AJAX
 
 Developer 1: Ingride Neslie Youadeu Noumbibou

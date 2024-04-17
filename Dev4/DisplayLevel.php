@@ -30,7 +30,9 @@ function DisplayLevel(string $level, string $type): void
 
             <br>
             <input type="submit" class="sendButton" id="sendButton" name="send" style="padding: 1%;">
-            <button type="submit" class="abandon" id="abandon" name="abandon" style="padding: 1%; margin-left: 2%">Abandon</button>
+            <button  class="abandon" id="abandon" name="abandon" style="padding: 1%; margin-left: 2%"><a href="..\Dev4\abandon.php">Abandon</a></button>
         </form>
     </div>
+
 <?php } ?>
+

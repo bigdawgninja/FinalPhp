@@ -1,5 +1,6 @@
 <?php
 
+
 function ArrayToString(array $arrayToConvert) : string
 {
     $stringResult = "";
@@ -14,3 +15,5 @@ function ArrayToString(array $arrayToConvert) : string
 
     return $stringResult;
 }
+
+?>

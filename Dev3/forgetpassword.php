@@ -1,6 +1,9 @@
 <?php
+    include("..\Dev5\comm_element.html");
+
 // Handle form submission here. You might want to lookup the user by email,
 // generate a unique token, save it with an expiration time, and send it via email.
+
 ?>
 
 <!DOCTYPE html>
@@ -19,3 +22,8 @@
 
 </body>
 </html>
+
+<?php
+echo"<br/>";
+include("..\Dev5\comm_footer.html");
+?>

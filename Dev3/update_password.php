@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+
     $username = $_POST['UserName'];
     $newPassword = $_POST['password']; // The new password entered by the user
     $conn = getDBConnection();

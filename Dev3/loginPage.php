@@ -1,3 +1,8 @@
+<?php
+    include("..\Dev5\comm_element.html");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +17,7 @@
         .container {
             max-width: 300px;
             margin: auto;
-            padding: 20px;
+            padding: 5%;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -60,9 +65,16 @@
         </div>
         <button type="submit" class="submit-btn">Login</button>
     </form>
-        <a href="forgetpassword.html">Forgot Password?</a>
+        <a href="forgetpassword.php">Forgot Password?</a>
 </div>
 
 
 </body>
 </html>
+
+<?php
+echo"<br/>";
+include("..\Dev5\comm_footer.html");
+
+?>
+

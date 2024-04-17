@@ -110,8 +110,8 @@ function createView($conn){
 
   $sql = "CREATE VIEW history AS
   SELECT s.scoreTime, p.id, p.fName, p.lName, s.result, s.livesUsed 
-  FROM player p, score s
-  WHERE p.registrationOrder = s.registrationOrder;";
+  FROM player p
+  JOIN score s ON p.registrationOrder = s.registrationOrder;";
 
   if($conn->query($sql) === TRUE) {
    // echo "View created successfully";

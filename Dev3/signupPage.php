@@ -1,3 +1,8 @@
+<?php
+    include("..\Dev5\comm_element.html");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +17,7 @@
         .container {
             max-width: 300px;
             margin: auto;
-            padding: 20px;
+            padding: 10%;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -75,3 +80,10 @@
 
 </body>
 </html>
+
+<?php
+echo"<br/>";
+include("..\Dev5\comm_footer.html");
+
+?>
+
